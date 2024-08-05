@@ -4,18 +4,18 @@ import pandas as pd
 # Conexión a MySQL
 conn = mysql.connector.connect(
     host='localhost',
-    user='tu_usuario',
-    password='tu_contraseña'
+    user='',
+    password=''
 )
 cursor = conn.cursor()
 
-# Crear base de datos
+# Crea base de datos
 cursor.execute("CREATE DATABASE IF NOT EXISTS CompanyData")
 
-# Seleccionar la base de datos
+# Selecciona la base de datos
 cursor.execute("USE CompanyData")
 
-# Crear tabla
+# Crea tabla
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS EmployeePerformance (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -28,10 +28,10 @@ CREATE TABLE IF NOT EXISTS EmployeePerformance (
 """)
 import pandas as pd
 
-# Cargar datos ficticios desde un archivo CSV
+# Carga datos ficticios desde un archivo CSV
 data = pd.read_csv('employee_performance_data.csv')
 
-# Insertar datos en la tabla
+# Inserta datos en la tabla
 conn = mysql.connector.connect(
     host='localhost',
     user='tu_usuario',
